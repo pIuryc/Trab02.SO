@@ -9,10 +9,9 @@ total_paginas = 10
 tamanho_workset = 4
 prob_workset = 0.9
 
-# Definição das páginas
-paginas = list(range(total_paginas))  # Páginas 0 a 9
-workset = paginas[:tamanho_workset]   # Páginas 0 a 3 (workset)
-restantes = paginas[tamanho_workset:] # Páginas 4 a 9 (fora do workset)
+paginas = list(range(total_paginas)) 
+workset = paginas[:tamanho_workset]   
+restantes = paginas[tamanho_workset:] 
 
 # Geração das referências
 referencias = []
