@@ -22,7 +22,6 @@ for _ in range(total_referencias):
         referencia = random.choice(restantes)
     referencias.append(referencia)
 
-# Salvando em um arquivo .txt
 nome_arquivo = "referencias_paginacao.txt"
 with open(nome_arquivo, "w") as arquivo:
     for ref in referencias:
