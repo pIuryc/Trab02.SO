@@ -1,4 +1,5 @@
 import random
+import os
 import matplotlib.pyplot as plt
 
 random.seed(42)
@@ -23,11 +24,16 @@ for _ in range(total_referencias):
     referencias.append(referencia)
 
 nome_arquivo = "referencias_paginacao.txt"
-with open(nome_arquivo, "w") as arquivo:
-    for ref in referencias:
-        arquivo.write(f"{ref}\n")
 
-print(f"Arquivo '{nome_arquivo}' criado com sucesso contendo {total_referencias} referências.")
+# Só cria o arquivo se ele ainda não existir
+if not os.path.exists(nome_arquivo):
+    with open(nome_arquivo, "w") as arquivo:
+        for ref in referencias:
+            arquivo.write(f"{ref}\n")
+    print(f"Arquivo '{nome_arquivo}' criado com sucesso!")
+else:
+    print(f"Arquivo '{nome_arquivo}' já existe. Nenhuma ação tomada.")
+
 
 def simulacao_fifo(referencias, num_quadros):
     quadros = []
